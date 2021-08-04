@@ -14,6 +14,9 @@ con.on('open', () => {
 const useR=require('./routes/users.js')
 app.use('/users',useR)
 
+app.get('/', (req,res) =>{
+    res.send("Its the homepage")
+})
 
 app.listen(4242, () => {
     console.log("Working at 4242")
