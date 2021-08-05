@@ -18,8 +18,9 @@ router.get('/',async(req,res) => {
 
 router.post('/',async(req,res) =>{
     const per= new User({
-        fame: req.body.fame,
-        lame: req.body.lame
+        fName: req.body.fName,
+        lName: req.body.lName,
+        age:req.body.age
     })
     try{
         const a1 = await per.save()

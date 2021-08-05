@@ -2,13 +2,18 @@ const mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema({
 
-    fame :{
+    fName :{
         type:String,
         required:true
 
     },
-    lame :{
+    lName :{
         type:String,
+        required:true
+
+    },
+    age:{
+        type:Number,
         required:true
 
     }
