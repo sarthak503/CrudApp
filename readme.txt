@@ -1,3 +1,7 @@
+**Check out the Demo-for-App video for a demo of the app.**
+
+-------------------------------------------------------------
+
 To start the server, go to terminal and run : 
 npm start
 
