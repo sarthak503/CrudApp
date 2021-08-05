@@ -1,12 +1,13 @@
 const express = require('express')
-const User = require('../models/user.js')
-const router = express.Router()
+const User = require('../models/user.js')            //importing the schema/model required 
+const router = express.Router()                      //Using routers to create routes
 
+//1. Get Route  
 
 router.get('/',async(req,res) => {
     try {
-        const users = await User.find()
-         res.json(users)
+        const users = await User.find()                 //Finds all the users                            
+         res.json(users)                                //and displays them    
 
         
     } catch (err) {
@@ -15,15 +16,15 @@ router.get('/',async(req,res) => {
 
 })
 
-
+//2. Post Route
 router.post('/',async(req,res) =>{
-    const per= new User({
+    const per= new User({                                    //creates a new user of type 'User' and fields are filled from the request                   
         fName: req.body.fName,
         lName: req.body.lName,
         age:req.body.age
     })
     try{
-        const a1 = await per.save()
+        const a1 = await per.save()                         //details are saved                    
         
         res.send("User Added Successfully")
     }
@@ -32,10 +33,12 @@ router.post('/',async(req,res) =>{
     }
 })
 
+//3. Get By ID Route
+
 router.get('/:id',async(req,res) => {
     try {
-        const user = await User.findById(req.params.id)
-        res.json(user)
+        const user = await User.findById(req.params.id)          //finds the user by id 
+        res.json(user)                                           //and displays it                   
   
         
     } catch (err) {
@@ -44,10 +47,12 @@ router.get('/:id',async(req,res) => {
 
 })
 
+//4. Delete Route
+
 router.delete('/:id',async(req,res) => {
     try {
-        const user = await User.findById(req.params.id)
-        const a1=await user.delete()
+        const user = await User.findById(req.params.id)      //finds the user by ID
+        const a1=await user.delete()                         //after finding , deletes that user
         res.send("User Deleted Successfully")
         
     } catch (err) {
@@ -58,4 +63,4 @@ router.delete('/:id',async(req,res) => {
  
 
 
-module.exports =router;
+module.exports =router;                                 //exporting the module

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon app.js"
   },
-  "author": "sarthak",
+  "author": "sarthak kumar",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
